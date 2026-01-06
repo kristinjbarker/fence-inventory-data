@@ -16,20 +16,19 @@ ipak(packages) ; rm(ipak, packages)
 
 
 
-# raw data (exported via Feature Class to Feature Class tool in ArcPro from fence group)
-# rawFences <- read_sf("../../Data/Fencemapping/rawFencelines.shp")
-rawFences <- read_sf("../../Data/Fencemapping/rawFencelines.shp")
-rawFeatures <- read_sf("../../Data/Fencemapping/rawFenceFeatures.shp")
-rawWildlife <- read_sf("../../Data/Fencemapping/rawWildlifeObservations.shp")
-rawRange <- read_sf("../../Data/Fencemapping/rawRangeImprovements.shp")
-rawUSFSall <- read_sf("../../Data/Fencemapping/SNFpasturesNW.shp")
-rawUSFSmapped <- read_sf("../../Data/Fencemapping/SNFmappedOnly.shp")
+## INVENTORY DATA ##
 
-# match crs
-rawUSFSall <- st_transform(rawUSFSall, st_crs(rawFences))
+# exported via Feature Class to Feature Class tool in ArcPro from fence group
+# (kristin's master copies in "../../Data/Fencemapping/")
+rawFences <- read_sf("data/raw/rawFencelines.shp")
+rawFeatures <- read_sf("data/raw/rawFenceFeatures.shp")
+rawWildlife <- read_sf("data/raw/rawWildlifeObservations.shp")
+rawRange <- read_sf("data/raw/rawRangeImprovements.shp")
 
-# all names entered as data collectors (need cleaning)
-rawCollectors <- sort(unique(c(rawFences$Collector_, 
-                               rawFeatures$Collector_, 
-                               rawWildlife$Collector_,
-                               rawRange$Collector_)))
+
+
+## PROJECT-SPECIFIC DATA ##
+
+priority_areas <- read_sf("data/project-specific/Priority_Inventory_areas.shp")
+pronghorn_range <- read_sf("data/project-specific/projectarea2025.shp")
+

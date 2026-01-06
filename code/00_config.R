@@ -4,6 +4,7 @@ packages <- c(
   "cowplot", # muti-panel plotting
   "sf", # tidy spatdat
   "stringr", # cleaning names etc
+  "skimr",  # wrangling data
   "tidyverse") # life
 ipak <- function(pkg){
   new.pkg <- pkg[!(pkg %in% installed.packages()[, "Package"])]
@@ -15,10 +16,9 @@ ipak(packages) ; rm(ipak, packages)
 
 
 ## spatial data definitions
-crs_fences <- 26912
-
-dist_unit <- "miles"
-
+crs_fences <- 32157 # NAD83 / Wyoming West Central
+dist_unit <- "meters"
 point_types <- c("gate", "brace", "wildlife_sign")
 
-## collectors and groups
+## things to remove
+trainingday <- as.Date("2024-06-05")
