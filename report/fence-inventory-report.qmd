@@ -1,26 +1,83 @@
 ---
-title: "Fence inventory report"
-format: html
-editor: visual
+title: "Fence Inventory Summary"
+subtitle: "Field Season 2025"
+format:
+  html:
+    toc: true
+  pdf:
+    documentclass: article
+execute:
+  echo: false
+  warning: false
+  message: false
 ---
 
-## Quarto
+## Project Overview
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+This report summarizes the second year of the Absaroka Front Fence Inventory Project, a collaborative effort to map and assess fences in key wildlife migration corridors of the eastern Greater Yellowstone Ecosystem (GYE). The project was launched in 2024 to help natural resource managers and conservation groups plan fence removal and modification efforts that improve habitat connectivity and reduce risks for wildlife while supporting rangeland management. Led by the [Beyond Yellowstone Living Lab](www.beyondyellowstone.org), this work was codeveloped alongside the Absaroka Fence Initiative, Shoshone National Forest, Bureau of Land Management, and other partners.
 
-## Running Code
+### Why inventory?
 
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+Mapping fences helps conservation efforts by identifying areas where fences have the greatest impact on wildlife movement and migration. It also helps researchers determine how fences affect wildlife populations and behaviors.
+
+# Project context
+
+### Focal area
+
+The Absaroka Front in the eastern Greater Yellowstone Ecosystem is a critical migration area for wildlife like elk, mule deer, bighorn sheep, and pronghorn antelope.
+
+### Priority zones
+
+In 2025, we focused on mapping seasonal ranges and migratory corridors used by the Carter Mountain pronghorn herd. Our work was primarily aimed at helping inform plans for the We identified these areas from locations gathered from pronghorn wearing GPS collars. Fences within the high-use areas were our top priority, and we mapped additional fences across the range ad hoc based on logistics and feasibility.
+
+### Fence data
+
+Field crews mapped fence lines, assessed fence conditions, measured wire heights, marked locations of braces and gates, and noted area accessibility to inform future work.
 
 ```{r}
-1 + 1
+source("../code/00_config.R")
+source("../code/01_load-fence-data.R")
+source("../code/02_wrangling-functions.R")
+source("../code/03_clean-fencelines.R")
+source("../code/04_summarize-data.R")
+source("../code/05_plots.R")
 ```
 
-You can add options to executable code like this
+## Field effort summary
 
 ```{r}
 #| echo: false
 2 * 2
 ```
 
-The `echo: false` option disables the printing of code (only output is displayed).
+Crews mapped \*\*`r round(total_miles, 1)`\*\* **miles** of fence and documented **`r n_gates` gates** during the 2025 field season.
+
+these are the numbers to pull
+
+Over XXX weeks, the field crew censused about XXX square miles across both priority zones, added or updated more than XXX miles of fence information, and marked the locations of more than XXX braces and gates. They also documented XXX fence-caused wildlife deaths.
+
+Fences mapped \[2025 and total\]
+
+Fences in need of assessment \[2025 and total?\]
+
+Teaching and training
+
+XXX people
+
+4 full-time technicians.
+
+Provided XXX volunteers with hands-on experience in field data collection, logistics, and safety.
+
+## Looking Forward
+
+Our next goal is completely inventory the areas used most intensively by the Carter Mountain Pronghorn herd, along with any additional areas needed to inform and support the Absaroka Fence Initiative's multi-year fence modification project. Conservation partners and wildlife managers are actively working to improve habitat connectivity for this herd, which has particular ecological, cultural, and economic value but is increasingly threatened by land use changes and other stressors.
+
+## Key funders
+
+Rocky Mountain Elk Foundation
+
+Greater Yellowstone Coalition
+
+Waterways Foundation
+
+Beyond Yellowstone Living Lab (BAND and Ishiyama Foundations)
