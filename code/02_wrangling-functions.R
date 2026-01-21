@@ -41,7 +41,7 @@
       org  = c("WGFD", 
                "BYLL", "BYLL", "BYLL", 
                "BYLL", "BYLL", "BYLL", 
-               "TNC", "AFI", 
+               "AFI", "AFI", 
                "BHA", "BHA", "BHA"))
     
     # map organizations to abbrevs
